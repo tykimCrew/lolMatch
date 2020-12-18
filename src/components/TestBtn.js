@@ -10,7 +10,7 @@ class TestBtn extends Component {
     }
 
     getCmtListAjax = () => {
-        var cmtUrl = "http://bjapi.afreecatv.com/api/khm11903/title/65714065/comment?page=1&orderby=like_cnt";
+        var cmtUrl = "https://bjapi.afreecatv.com/api/khm11903/title/65714065/comment?page=1&orderby=like_cnt";
 
         $.ajax({
             url : cmtUrl,
