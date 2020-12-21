@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/lolMatch/static/css/main.07570f3d.chunk.css",
-    "main.js": "/lolMatch/static/js/main.7a8772af.chunk.js",
-    "main.js.map": "/lolMatch/static/js/main.7a8772af.chunk.js.map",
+    "main.css": "/lolMatch/static/css/main.b48b2a08.chunk.css",
+    "main.js": "/lolMatch/static/js/main.df92597e.chunk.js",
+    "main.js.map": "/lolMatch/static/js/main.df92597e.chunk.js.map",
     "runtime-main.js": "/lolMatch/static/js/runtime-main.9e5ec9a8.js",
     "runtime-main.js.map": "/lolMatch/static/js/runtime-main.9e5ec9a8.js.map",
     "static/js/2.d6373ae2.chunk.js": "/lolMatch/static/js/2.d6373ae2.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.bf68c4b2.chunk.js": "/lolMatch/static/js/3.bf68c4b2.chunk.js",
     "static/js/3.bf68c4b2.chunk.js.map": "/lolMatch/static/js/3.bf68c4b2.chunk.js.map",
     "index.html": "/lolMatch/index.html",
-    "static/css/main.07570f3d.chunk.css.map": "/lolMatch/static/css/main.07570f3d.chunk.css.map",
+    "static/css/main.b48b2a08.chunk.css.map": "/lolMatch/static/css/main.b48b2a08.chunk.css.map",
     "static/js/2.d6373ae2.chunk.js.LICENSE.txt": "/lolMatch/static/js/2.d6373ae2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9e5ec9a8.js",
     "static/js/2.d6373ae2.chunk.js",
-    "static/css/main.07570f3d.chunk.css",
-    "static/js/main.7a8772af.chunk.js"
+    "static/css/main.b48b2a08.chunk.css",
+    "static/js/main.df92597e.chunk.js"
   ]
 }
