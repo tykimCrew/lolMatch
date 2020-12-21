@@ -1,0 +1,52 @@
+body {
+    margin : 0;
+    width: 60%;
+}
+
+.top {
+    border: 1px solid blue;
+    height: 5rem;
+    padding: 1rem;
+}
+
+.bottom {
+    border: 1px solid red;
+    float: left;
+    width: 100%;
+    display: flex;
+}
+
+.bottom_left {
+    border: 1px solid green;
+    padding: 1rem;
+    width: 30%;
+}
+
+.bottom_center {
+    border: 1px solid yellow;
+    padding: 1rem;
+    width: 40%;
+}
+
+.bottom_right {
+    border: 1px solid brown;
+    padding: 1rem;
+    width: 30%;
+    
+}
+
+
+.memberIcon {
+    width: 5rem;
+    height: 5rem;
+}
+
+
+/* POSITION */
+.positionCard {
+    border: 1px dotted;
+    height : 5rem;
+    margin: 1rem;
+
+}
+

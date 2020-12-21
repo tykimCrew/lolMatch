@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 
+import MemberCard from './MemberCard';
 
 
 
-class TestBtn extends Component {
+class Members extends Component {
      render() {
-        const cmtElList = this.props.memberList.map( item =>
-            <li key={item.userId}>
-                <img style={{width:"48px", height:"48px"}} src={item.profileImage} alt="이미지" />
-                {item.userId}({item.userNick}) / 추천수 : {item.likeCnt} / {item.comment}
-            </li>
+        const cmtElList = this.props.memberList.map( memberInfo =>
+            <MemberCard key={memberInfo.userId}
+                        memberInfo={memberInfo}
+                        onDragStart={this.props.onDragStart}
+            />
         );
 
         return (
@@ -20,4 +21,4 @@ class TestBtn extends Component {
     }
 }
 
-export default TestBtn;
+export default Members;
