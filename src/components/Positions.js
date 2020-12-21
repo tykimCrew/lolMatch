@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import PositionCard from './PositionCard';
+//import PositionCardRight from './PositionCardRight';
 
 
 
@@ -15,35 +16,31 @@ class Positions extends Component {
                         onDragOver={this.props.onDragOver}
                         onDrop={this.props.onDrop}
                         side={this.props.side}
-                        memberInfo={this.props.memberList.filter(e => e.position === 'top')}
-                    />
-
-                    
-                    
+                        memberInfo={this.props.memberList.filter(e => e.position === 'top')}/>
                     <PositionCard position="jungle"
-                    onDragStart={this.props.onDragStart}
-                    onDragOver={this.props.onDragOver}
-                    onDrop={this.props.onDrop}
-                    side={this.props.side}
-                    memberInfo={this.props.memberList.filter(e => e.position === 'jungle')}/>
+                        onDragStart={this.props.onDragStart}
+                        onDragOver={this.props.onDragOver}
+                        onDrop={this.props.onDrop}
+                        side={this.props.side}
+                        memberInfo={this.props.memberList.filter(e => e.position === 'jungle')}/>
                     <PositionCard position="mid"
-                    onDragStart={this.props.onDragStart}
-                    onDragOver={this.props.onDragOver}
-                    onDrop={this.props.onDrop}
-                    side={this.props.side}
-                    memberInfo={this.props.memberList.filter(e => e.position === 'mid')}/>
+                        onDragStart={this.props.onDragStart}
+                        onDragOver={this.props.onDragOver}
+                        onDrop={this.props.onDrop}
+                        side={this.props.side}
+                        memberInfo={this.props.memberList.filter(e => e.position === 'mid')}/>
                     <PositionCard position="ad"
-                    onDragStart={this.props.onDragStart}
-                    onDragOver={this.props.onDragOver}
-                    onDrop={this.props.onDrop}
-                    side={this.props.side}
-                    memberInfo={this.props.memberList.filter(e => e.position === 'ad')}/>
+                        onDragStart={this.props.onDragStart}
+                        onDragOver={this.props.onDragOver}
+                        onDrop={this.props.onDrop}
+                        side={this.props.side}
+                        memberInfo={this.props.memberList.filter(e => e.position === 'ad')}/>
                     <PositionCard position="supporter"
-                    onDragStart={this.props.onDragStart}
-                    onDragOver={this.props.onDragOver}
-                    onDrop={this.props.onDrop}
-                    side={this.props.side}
-                    memberInfo={this.props.memberList.filter(e => e.position === 'supporter')}/>
+                        onDragStart={this.props.onDragStart}
+                        onDragOver={this.props.onDragOver}
+                        onDrop={this.props.onDrop}
+                        side={this.props.side}
+                        memberInfo={this.props.memberList.filter(e => e.position === 'supporter')}/>
                 </div>
             </React.Fragment>
         )

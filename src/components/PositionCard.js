@@ -12,10 +12,13 @@ class PositionCard extends Component {
                     onDragOver={(e) => this.props.onDragOver(e)}
                     onDrop={(e) => this.props.onDrop(e, this.props.side, this.props.position)}
                 >
+                    <img src={process.env.PUBLIC_URL + '/images/position_default_img/' + this.props.position +'.png'}
+                        alt={this.props.position}
+                        className="positionIcon"
+                    />
                     {
-                        
                         this.props.memberInfo.length !== 0 ? 
-                        <MemberCard memberInfo={this.props.memberInfo[0]} onDragStart={this.props.onDragStart} /> : this.props.position
+                        <MemberCard memberInfo={this.props.memberInfo[0]} onDragStart={this.props.onDragStart} /> :''
                     }
                 </div>
            </React.Fragment>

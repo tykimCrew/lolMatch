@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 
-import MemberCard from './MemberCard';
+import MemberIcon from './MemberIcon';
 
 
 
 class Members extends Component {
      render() {
         const cmtElList = this.props.memberList.map( memberInfo =>
-            <MemberCard key={memberInfo.userId}
+            <MemberIcon key={memberInfo.userId}
                         memberInfo={memberInfo}
                         onDragStart={this.props.onDragStart}
             />

@@ -25,7 +25,7 @@ class BoardUrlInput extends Component {
                     onChange={this.boardUrlOnChange}
                 />
                 <button onClick={() => this.props.onBtnClick(this.state.boardUrlValue)}>
-                    가져오기
+                    검색
                 </button>
             </React.Fragment>
         );

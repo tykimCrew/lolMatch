@@ -18,13 +18,6 @@ class MemberCard extends Component {
         */
        return (
            <React.Fragment>
-               {/* <div className="memberCard"
-                    draggable
-                    onDragStart={ (e) => this.props.onDragStart(e, this.props.memberInfo) }
-               >
-                   <img src={member.profileImage} alt={member.userId} className="memberIcon"></img>
-                   {member.userNick}({member.userId})
-               </div> */}
                <div className="memberCard container"
                 draggable
                 onDragStart={ (e) => this.props.onDragStart(e, this.props.memberInfo) }
