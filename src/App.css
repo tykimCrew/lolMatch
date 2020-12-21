@@ -1,11 +1,12 @@
 body {
     margin : 0;
+    background-color: #161616;
 }
 /***************** TOP ******************/
 .top {
     border: 3px solid #ffcc66;
     height: 5rem;
-    background-color: #001a1a;
+
 }
 .top input {
     width: 50rem;
@@ -35,19 +36,23 @@ body {
 
 /***************** BOTTOM ******************/
 .bottom {
-    background-color: #161616;
     float: left;
     width: 100%;
-    display: flex;
-    padding: 5rem 2rem 5rem 2rem;
+    display: flex;    
 }
 .bottom_left {
+    
+    margin: 5rem 0rem 5rem 5rem;
     width: 20%;
 }
 .bottom_center {
+    margin: 5rem;
     width: 60%;
 }
 .bottom_right {
+    
+    margin: 5rem 5rem 5rem 0rem;
+    margin-top: 5rem;
     width: 20%;
 }
 /***************** BOTTOM END******************/
@@ -56,7 +61,7 @@ body {
 /***************** BOTTOM_CENTER ******************/
 .memberIcon {
     width: 5rem;
-    height: 7rem;
+    height: 5rem;
     /* border: 1px solid; */
     float: left;
     margin: 20px;
@@ -80,20 +85,35 @@ body {
 
 /***************** BOTTOM_LEFT ******************/
 .positionCard {
+    width: 100%;
     border-top: 2px solid #ffcc66;
     border-bottom: 2px solid #ffcc66;
     height : 5rem;
-    padding-top:1rem;
-    padding-bottom:1rem;
-    padding-left:1rem;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
-.positionIcon {
+.red .positionIcon {
     width: 5rem;
     height: 5rem;
-    float: left;
     margin-right: 2rem;
 }
+.blue .positionIcon {
+    width: 5rem;
+    height: 5rem;
+    margin-left: 2rem;
+}
 
+.memberCard {
+    color: #ffd699;   
+}
+.red .memberCard {
+    margin-left: 1.5rem;
+}
+.blue .memberCard {
+    margin-right: 1.5rem;
+}
 /***************** BOTTOM_LEFT END ******************/
 

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-//import '../MemberCard.css';
+import '../MemberCard.css';
 
 class MemberIcon extends Component {
     
