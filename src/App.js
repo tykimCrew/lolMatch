@@ -6,7 +6,7 @@ import BoardUrlInput from './components/BoardUrlInput';
 import Members from './components/Members';
 import Positions from './components/Positions';
 
-import { testCommentData } from './script/testCommentData';
+// import { testCommentData } from './script/testCommentData';
 import update from 'react-addons-update';
 
 
@@ -23,7 +23,7 @@ class App extends Component {
 
   getCmtListAjax = (boardUrl) => {
     // apiUrl = "https://bjapi.afreecatv.com/api/khm11903/title/65714065/comment?page=1&orderby=like_cnt";
-     boardUrl = 'http://bj.afreecatv.com/khm11903/post/65714065';
+     //boardUrl = 'http://bj.afreecatv.com/khm11903/post/65714065';
 
     var urlArr = boardUrl.split('/');
     var url = 'https://bjapi.afreecatv.com/api/' + urlArr[3] + '/title/' + urlArr[5] + '/comment?page=1&orderby=like_cnt';
@@ -46,13 +46,16 @@ class App extends Component {
           // let tierArr = ['Iron', 'Bronze ', 'Silver', 'Gold', 'Plat', 'Diamond', 'Master', 'GrandMaster', 'Challenger'];
           // if (index > 0) return; 
           // item.comment = '원딜,sup,미드/플래4/test/화이팅1';
-          item.comment = testCommentData[index];
+          //item.comment = testCommentData[index];
 
           var commentDataArr = item.comment.split('/');
+
+          if(!commentDataArr || commentDataArr.length < 2) return;
+
           var myPositions = commentDataArr[0].split(',');
           var myTier = commentDataArr[1];
-          var myLolNick = commentDataArr[2];
-          var myDazim = commentDataArr[3];
+          //var myLolNick = commentDataArr[2];
+          //var myDazim = commentDataArr[3];
 
           var pattern_kor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/; // 한글체크
 
@@ -131,8 +134,8 @@ class App extends Component {
             likeCnt : item.like_cnt,
             myPosition : posiResult,
             myTier : tierResult,
-            myLolNick : myLolNick,
-            myDazim : myDazim,
+            //myLolNick : myLolNick,
+            //myDazim : myDazim,
             side : 'center',
             position : ''
           });
@@ -224,7 +227,6 @@ class App extends Component {
     
     return (
       <div className="App">
-
         <div className="top">
           <BoardUrlInput onBtnClick={this.getCmtListAjax} />
         </div>
