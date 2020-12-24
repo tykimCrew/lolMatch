@@ -4,9 +4,9 @@ body {
 }
 /***************** TOP ******************/
 .top {
-    border: 3px solid #ffcc66;
+    border-bottom: 3px solid #ffffff;
     height: 5rem;
-
+    margin-top: 2rem;
 }
 .top input {
     width: 50rem;
@@ -27,7 +27,6 @@ body {
     border-color: #ffcc66;
     color: #f3f3f3;
     border-radius: 3px;
-
     position: relative;
     left: 50%;
     top: 20%;
@@ -66,9 +65,11 @@ body {
     float: left;
     margin: 20px;
     text-align: center;
+    position: relative;
+    cursor: move;
 }
 
-.memberIcon img {
+.memberIcon .profile {
     width: 5rem;
     height: 5rem;
     border-radius: 15px;
@@ -98,22 +99,22 @@ body {
 .red .positionIcon {
     width: 5rem;
     height: 5rem;
-    margin-right: 2rem;
 }
 .blue .positionIcon {
     width: 5rem;
     height: 5rem;
-    margin-left: 2rem;
 }
 
 .memberCard {
     color: #ffd699;   
 }
 .red .memberCard {
-    margin-left: 1.5rem;
+    display: flex;
+    justify-content: center;
 }
 .blue .memberCard {
-    margin-right: 1.5rem;
+    display: flex;
+    justify-content: center;
 }
 /***************** BOTTOM_LEFT END ******************/
 

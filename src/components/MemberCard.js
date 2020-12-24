@@ -1,52 +1,105 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 //import '../MemberCard.css';
 //import images from '../images/Position_Bronze-Bot.png';
+import styled from 'styled-components';
+
+import iimg from '../images/ranked-emblems/Emblem_Iron.png';
+import bimg from '../images/ranked-emblems/Emblem_Bronze.png';
+import simg from '../images/ranked-emblems/Emblem_Silver.png';
+import gimg from '../images/ranked-emblems/Emblem_Gold.png';
+import pimg from '../images/ranked-emblems/Emblem_Platinum.png';
+import dimg from '../images/ranked-emblems/Emblem_Diamond.png';
+import mimg from '../images/ranked-emblems/Emblem_Master.png';
+import gmimg from '../images/ranked-emblems/Emblem_Grandmaster.png';
+import cimg from '../images/ranked-emblems/Emblem_Challenger.png';
+
+
+const TierIcon = styled.img`
+    width: 50px;
+    height: 50px;
+    
+    
+    
+`;
 
 class MemberCard extends Component {
-    
+
     render() {
         let member = this.props.memberInfo;
-       /**
-        * memberInfo
-        * 
-        * userId : item.user_id,
-        * userNick : item.user_nick,
-        * profileImage : item.profile_image,
-        * comment : item.comment,
-        * likeCnt : item.like_cnt
-        * 
-        */
-       return (
-           <React.Fragment>
-               <div className="memberCard container"
-                draggable
-                onDragStart={ (e) => this.props.onDragStart(e, this.props.memberInfo) }
-               >
+        let posiIconList = [];
+        this.props.memberInfo.myPosition.forEach((p, index) => {
+            posiIconList.push(<img key={index} src={process.env.PUBLIC_URL + '/images/Position_' + member.myTier + '-' + p + '.png'} alt="" />)
+        });
+
+        var imgSrc = '';
+        switch (member.myTier) {
+            case 'Iron':
+                imgSrc = iimg;
+                break;
+            case 'Bronze':
+                imgSrc = bimg;
+                break;
+            case 'Silver':
+                imgSrc = simg;
+                break;
+            case 'Gold':
+                imgSrc = gimg;
+                break;
+            case 'Platinum':
+                imgSrc = pimg;
+                break;
+            case 'Diamond':
+                imgSrc = dimg;
+                break;
+            case 'Master':
+                imgSrc = mimg;
+                break;
+            case 'GrandMaster':
+                imgSrc = gmimg;
+                break;
+            case 'Challenger':
+                imgSrc = cimg;
+                break;
+
+
+            default:
+                break;
+        }
+        /**
+         * memberInfo
+         * 
+         * userId : item.user_id,
+         * userNick : item.user_nick,
+         * profileImage : item.profile_image,
+         * comment : item.comment,
+         * likeCnt : item.like_cnt
+         * 
+         */
+        return (
+            <React.Fragment>
+                <div className="memberCard container"
+                    draggable
+                    onDragStart={(e) => this.props.onDragStart(e, member)}
+                >
                     {
-                        this.props.side === 'red' ? 
-                        <div className="img-container"><img src={member.profileImage} alt={member.userId}/></div> : ''
+                        this.props.side === 'red' ?
+                            <div className="img-container"><img src={member.profileImage} alt={member.userId} /></div> : ''
                     }
                     <div className="content">
-                        <div className="head">
-                            <p>{member.userNick} <span>{member.userId}</span></p>
-                            {/* 추천수: {member.likeCnt} */}
+                        <div>
+                            <p className="userNick">{member.userNick}</p>
+                            <span className="userId">{member.userId}</span>
                         </div>
-                        <div className="data">
-                            <div className="inner-data">
-                                {/* <p className="nick">한번만주세요</p> */}
-                                <img src={process.env.PUBLIC_URL + '/images/Position_Grandmaster-Jungle.png'} alt={member.userId}/>
-                                <p className="nick">SILVER 3</p>
-                            </div>
-                        </div>
-                    </div>   
+                        <TierIcon src={imgSrc} />
+                    </div>
                     {
-                        this.props.side === 'blue' ? 
-                        <div className="img-container"><img src={member.profileImage} alt={member.userId}/></div> : ''
+                        this.props.side === 'blue' ?
+                            <div className="img-container"><img src={member.profileImage} alt={member.userId} /></div> : ''
                     }
                 </div>
-           </React.Fragment>
-       )
-   }
+            </React.Fragment>
+        )
+    }
 }
 
 export default MemberCard;
