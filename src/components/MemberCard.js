@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-//import '../MemberCard.css';
-//import images from '../images/Position_Bronze-Bot.png';
 import styled from 'styled-components';
 
 import iimg from '../images/ranked-emblems/Emblem_Iron.png';
@@ -13,73 +11,40 @@ import mimg from '../images/ranked-emblems/Emblem_Master.png';
 import gmimg from '../images/ranked-emblems/Emblem_Grandmaster.png';
 import cimg from '../images/ranked-emblems/Emblem_Challenger.png';
 
-
 const TierIcon = styled.img`
     width: 50px;
     height: 50px;
-    
-    
-    
 `;
 
 class MemberCard extends Component {
-
     render() {
         let member = this.props.memberInfo;
         let posiIconList = [];
-        this.props.memberInfo.myPosition.forEach((p, index) => {
-            posiIconList.push(<img key={index} src={process.env.PUBLIC_URL + '/images/Position_' + member.myTier + '-' + p + '.png'} alt="" />)
-        });
+        if (Object.keys(member).length !== 0) {
+            member.myPosition.forEach((p, index) => {
+                posiIconList.push(<img key={index} src={process.env.PUBLIC_URL + '/images/Position_' + member.myTier + '-' + p + '.png'} alt="" />)
+            });
 
-        var imgSrc = '';
-        switch (member.myTier) {
-            case 'Iron':
-                imgSrc = iimg;
-                break;
-            case 'Bronze':
-                imgSrc = bimg;
-                break;
-            case 'Silver':
-                imgSrc = simg;
-                break;
-            case 'Gold':
-                imgSrc = gimg;
-                break;
-            case 'Platinum':
-                imgSrc = pimg;
-                break;
-            case 'Diamond':
-                imgSrc = dimg;
-                break;
-            case 'Master':
-                imgSrc = mimg;
-                break;
-            case 'GrandMaster':
-                imgSrc = gmimg;
-                break;
-            case 'Challenger':
-                imgSrc = cimg;
-                break;
-
-
-            default:
-                break;
+            var imgSrc = '';
+            switch (member.myTier) {
+                case 'Iron': imgSrc = iimg; break;
+                case 'Bronze': imgSrc = bimg; break;
+                case 'Silver': imgSrc = simg; break;
+                case 'Gold': imgSrc = gimg; break;
+                case 'Platinum': imgSrc = pimg; break;
+                case 'Diamond': imgSrc = dimg; break;
+                case 'Master': imgSrc = mimg; break;
+                case 'GrandMaster': imgSrc = gmimg; break;
+                case 'Challenger': imgSrc = cimg; break;
+                default: break;
+            }
         }
-        /**
-         * memberInfo
-         * 
-         * userId : item.user_id,
-         * userNick : item.user_nick,
-         * profileImage : item.profile_image,
-         * comment : item.comment,
-         * likeCnt : item.like_cnt
-         * 
-         */
+
         return (
             <React.Fragment>
                 <div className="memberCard container"
                     draggable
-                    onDragStart={(e) => this.props.onDragStart(e, member)}
+                    onDragStart={(e) => e.dataTransfer.setData('dragUserInfo', JSON.stringify(member))}
                 >
                     {
                         this.props.side === 'red' ?

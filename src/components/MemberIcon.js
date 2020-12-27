@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import '../MemberCard.css';
 import styled from 'styled-components';
@@ -16,73 +16,40 @@ import cimg from '../images/ranked-emblems/Emblem_Challenger.png';
 const TierIcon = styled.img`
     width: 40px;
     height: 40px;
-    
     position: absolute;
     left: -15px;
     top: -15px;
-    
 `;
 class MemberIcon extends Component {
-    
     render() {
         let member = this.props.memberInfo;
-        var  imgSrc = '';
+        var imgSrc = '';
         switch (member.myTier) {
-            case 'Iron':
-                imgSrc = iimg;
-                break;
-            case 'Bronze':
-                imgSrc = bimg;
-                break;
-            case 'Silver':
-                imgSrc = simg;
-                break;
-            case 'Gold':
-                imgSrc = gimg;
-                break;
-            case 'Platinum':
-                imgSrc = pimg;
-                break;
-            case 'Diamond':
-                imgSrc = dimg;
-                break;
-            case 'Master':
-                imgSrc = mimg;
-                break;
-            case 'GrandMaster':
-                imgSrc = gmimg;
-                break;
-            case 'Challenger':
-                imgSrc = cimg;
-                break;
-            
-            
-            default:
-                break;
+            case 'Iron': imgSrc = iimg; break;
+            case 'Bronze': imgSrc = bimg; break;
+            case 'Silver': imgSrc = simg; break;
+            case 'Gold': imgSrc = gimg; break;
+            case 'Platinum': imgSrc = pimg; break;
+            case 'Diamond': imgSrc = dimg; break;
+            case 'Master': imgSrc = mimg; break;
+            case 'GrandMaster': imgSrc = gmimg; break;
+            case 'Challenger': imgSrc = cimg; break;
+            default: break;
         }
-       /**
-        * memberInfo
-        * 
-        * userId : item.user_id,
-        * userNick : item.user_nick,
-        * profileImage : item.profile_image,
-        * comment : item.comment,
-        * likeCnt : item.like_cnt
-        * 
-        */
-       return (
-           <React.Fragment>
+
+        return (
+            <React.Fragment>
                 <div className="memberIcon"
                     draggable
-                    onDragStart={ (e) => this.props.onDragStart(e, this.props.memberInfo) }
-                >        
-                    <img src={member.profileImage} alt={member.userId} className="profile"/>
+                    onDragStart={(e) => this.props.onDragStart(e, this.props.memberInfo)}
+                >
+                    <img src={member.profileImage} alt={member.userId} className="profile" />
                     <span>{member.userNick}</span>
                     <TierIcon src={imgSrc}></TierIcon>
                 </div>
-           </React.Fragment>
-       )
-   }
+            </React.Fragment>
+        )
+    }
 }
 
 export default MemberIcon;
