@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/lolMatch/static/css/main.9b4cd726.chunk.css",
-    "main.js": "/lolMatch/static/js/main.eaa56616.chunk.js",
-    "main.js.map": "/lolMatch/static/js/main.eaa56616.chunk.js.map",
+    "main.js": "/lolMatch/static/js/main.54b177fb.chunk.js",
+    "main.js.map": "/lolMatch/static/js/main.54b177fb.chunk.js.map",
     "runtime-main.js": "/lolMatch/static/js/runtime-main.35236421.js",
     "runtime-main.js.map": "/lolMatch/static/js/runtime-main.35236421.js.map",
     "static/js/2.b0a9b8ab.chunk.js": "/lolMatch/static/js/2.b0a9b8ab.chunk.js",
@@ -26,6 +26,6 @@
     "static/js/runtime-main.35236421.js",
     "static/js/2.b0a9b8ab.chunk.js",
     "static/css/main.9b4cd726.chunk.css",
-    "static/js/main.eaa56616.chunk.js"
+    "static/js/main.54b177fb.chunk.js"
   ]
 }
