@@ -4,7 +4,8 @@ import MembersHeader  from '../components/MembersHeader'
 function mapStateToProps(reduxState) {
     return {
         selectedPosiView: reduxState.selectedPosiView,
-        typedText: reduxState.typedText
+        typedText: reduxState.typedText,
+        memberList: reduxState.memberList
     };
 }
 
