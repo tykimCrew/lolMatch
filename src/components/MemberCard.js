@@ -14,6 +14,7 @@ import cimg from '../images/ranked-emblems/Emblem_Challenger.png';
 const TierIcon = styled.img`
     width: 50px;
     height: 50px;
+    display: ${props => props.src ? 'block' : 'none'};
 `;
 
 class MemberCard extends Component {

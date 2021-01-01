@@ -19,6 +19,7 @@ const TierIcon = styled.img`
     position: absolute;
     left: -15px;
     top: -15px;
+    display: ${props => props.src ? 'block' : 'none'};
 `;
 class MemberIcon extends Component {
     render() {

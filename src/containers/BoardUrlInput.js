@@ -5,7 +5,7 @@ import { posiKorJson, posiEngJson, tierKorJson, tierEngJson, pattern_kor } from 
 import $ from 'jquery';
 
 function getCmtListAjax(boardUrl, dispatch) {
-  //boardUrl = 'http://bj.afreecatv.com/khm11903/post/65714065';
+  boardUrl = 'http://bj.afreecatv.com/yuambo/post/66497567';
   var urlArr = boardUrl.split('/');
 
   /**
@@ -57,44 +57,47 @@ function getCmtListAjax(boardUrl, dispatch) {
      * item.comment  = "원딜,서폿/골드4"
      */
     var commentDataArr = item.comment.split('/');
-    if (!commentDataArr || commentDataArr.length < 2) return;
-
-    /**
-     * 덧글로 입력한 포지션을 분석해서 코드에필요한 포지션데이터로 가공
-     * ../script/PositionTierData 에 정의
-     */
-    var myPositions = commentDataArr[0].split(',');
     var posiResult = [];
-    myPositions.forEach((myPosition) => {
-      var posiJson = pattern_kor.test(myPosition) ? posiKorJson : posiEngJson;
-      var resultKey = '';
+    var tierResult = '';
 
-      Object.getOwnPropertyNames(posiJson).forEach((key) => {
-        if (resultKey) return false;
+    if (commentDataArr && commentDataArr.length >= 2) {
+      /**
+           * 덧글로 입력한 포지션을 분석해서 코드에필요한 포지션데이터로 가공
+           * ../script/PositionTierData 에 정의
+           */
+      var myPositions = commentDataArr[0].split(',');
 
-        posiJson[key].forEach((posiValue) => {
-          if (posiValue === myPosition.toLowerCase()) { resultKey = key; return false; }
+      myPositions.forEach((myPosition) => {
+        var posiJson = pattern_kor.test(myPosition) ? posiKorJson : posiEngJson;
+        var resultKey = '';
+
+        Object.getOwnPropertyNames(posiJson).forEach((key) => {
+          if (resultKey) return false;
+
+          posiJson[key].forEach((posiValue) => {
+            if (posiValue === myPosition.toLowerCase()) { resultKey = key; return false; }
+          });
+        });
+
+        posiResult.push(resultKey);
+      });
+
+      /**
+       * 덧글로 입력한 티어을 분석해서 코드에필요한 티어데이터로 가공
+       * ../script/PositionTierData 에 정의
+       */
+      var myTier = commentDataArr[1];
+
+      var tierJson = pattern_kor.test(myTier) ? tierKorJson : tierEngJson;
+
+      Object.getOwnPropertyNames(tierJson).forEach((key) => {
+        if (tierResult) return false;
+
+        tierJson[key].forEach((tierValue) => {
+          if (myTier.toLowerCase().indexOf(tierValue) > -1) { tierResult = key; return false; }
         });
       });
-
-      posiResult.push(resultKey);
-    });
-
-    /**
-     * 덧글로 입력한 티어을 분석해서 코드에필요한 티어데이터로 가공
-     * ../script/PositionTierData 에 정의
-     */
-    var myTier = commentDataArr[1];
-    var tierResult = '';
-    var tierJson = pattern_kor.test(myTier) ? tierKorJson : tierEngJson;
-
-    Object.getOwnPropertyNames(tierJson).forEach((key) => {
-      if (tierResult) return false;
-
-      tierJson[key].forEach((tierValue) => {
-        if (myTier.toLowerCase().indexOf(tierValue) > -1) { tierResult = key; return false; }
-      });
-    });
+    };
 
     /**
      * 가공한 데이터를 최종결과변수에 넣기
