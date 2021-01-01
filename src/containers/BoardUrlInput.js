@@ -1,13 +1,27 @@
 import { connect } from 'react-redux';
 import BoardUrlInput from '../components/BoardUrlInput';
+import moment from 'moment';
 
 import { posiKorJson, posiEngJson, tierKorJson, tierEngJson, pattern_kor } from '../script/PositionTierData';
 import $ from 'jquery';
+
+const firebaseURL = 'https://lolmatch-49698-default-rtdb.firebaseio.com';
+
+function setLogUrl(boardUrl) {
+  var jsondata1 = {};
+  jsondata1[moment().format('YYYY-MM-DD hh:mm:ss')] = boardUrl;
+  
+  fetch(`${firebaseURL}/logs.json`, {
+    method: 'POST',
+    body: JSON.stringify(jsondata1),
+  });
+}
 
 function getCmtListAjax(boardUrl, dispatch) {
   //boardUrl = 'http://bj.afreecatv.com/yuambo/post/66497567';
   var urlArr = boardUrl.split('/');
 
+  setLogUrl(boardUrl);
   /**
    * 넘어온 방송국URL에대한 최소한의 데이터 검증. NULL체크는 호출하는 mapDispatchToProps 쪽에서 체크
    */

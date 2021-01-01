@@ -55,7 +55,7 @@ export default class MembersHeader extends Component {
                     <PosiIcon src={supportImg} onClick={ () => this.props.onClick(STR_SUPPORT) } selected={this.props.selectedPosiView === STR_SUPPORT ? true : false}/>{this.props.memberList ? <PosiCnt index="5">{supportCnt}</PosiCnt> : ''}
                 </div>
                 <div>
-                    <span style={{color: 'white'}}>닉네임: </span><input style={searchInput} type="text" value={this.props.typedText || ''} onChange={(e) => this.props.onChange(e.target.value)}></input>
+                    <span style={{color: 'white'}} onClick={this.props.getLogs}>닉네임: </span><input style={searchInput} type="text" value={this.props.typedText || ''} onChange={(e) => this.props.onChange(e.target.value)}></input>
                 </div>
             </div>
         );

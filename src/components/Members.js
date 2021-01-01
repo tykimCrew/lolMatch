@@ -19,7 +19,16 @@ class Members extends Component {
         return (
             <React.Fragment>
                 <MembersHeader/>
-                {cmtElList}
+                {
+                    cmtElList.length !== 0 ?
+                        cmtElList
+                        :
+                        <div style={{color : 'lightGray', fontSize: '1.5rem'}}>
+                            <p style={{textAlign:'center', fontSize: '2rem'}}>*꼭* 읽어주세요</p>
+                            <p>1. 방송국 게시판 URL을 위에 복사/붙여넣기 하여 검색 해 주세요</p>
+                            <p>2. 기본 인기순(추천수 많은순), 최대 100명 입니다.</p>
+                        </div>
+                }
             </React.Fragment>
         )
     }
