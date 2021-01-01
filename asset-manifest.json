@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/lolMatch/static/css/main.9b4cd726.chunk.css",
-    "main.js": "/lolMatch/static/js/main.d4ead9ff.chunk.js",
-    "main.js.map": "/lolMatch/static/js/main.d4ead9ff.chunk.js.map",
-    "runtime-main.js": "/lolMatch/static/js/runtime-main.35236421.js",
-    "runtime-main.js.map": "/lolMatch/static/js/runtime-main.35236421.js.map",
-    "static/js/2.b0a9b8ab.chunk.js": "/lolMatch/static/js/2.b0a9b8ab.chunk.js",
-    "static/js/2.b0a9b8ab.chunk.js.map": "/lolMatch/static/js/2.b0a9b8ab.chunk.js.map",
-    "static/js/3.87054974.chunk.js": "/lolMatch/static/js/3.87054974.chunk.js",
-    "static/js/3.87054974.chunk.js.map": "/lolMatch/static/js/3.87054974.chunk.js.map",
+    "main.js": "/lolMatch/static/js/main.cc45b2e3.chunk.js",
+    "main.js.map": "/lolMatch/static/js/main.cc45b2e3.chunk.js.map",
+    "runtime-main.js": "/lolMatch/static/js/runtime-main.7c2f1b6c.js",
+    "runtime-main.js.map": "/lolMatch/static/js/runtime-main.7c2f1b6c.js.map",
+    "static/js/2.fa2faafc.chunk.js": "/lolMatch/static/js/2.fa2faafc.chunk.js",
+    "static/js/2.fa2faafc.chunk.js.map": "/lolMatch/static/js/2.fa2faafc.chunk.js.map",
+    "static/js/3.b010e3f1.chunk.js": "/lolMatch/static/js/3.b010e3f1.chunk.js",
+    "static/js/3.b010e3f1.chunk.js.map": "/lolMatch/static/js/3.b010e3f1.chunk.js.map",
     "index.html": "/lolMatch/index.html",
     "static/css/main.9b4cd726.chunk.css.map": "/lolMatch/static/css/main.9b4cd726.chunk.css.map",
-    "static/js/2.b0a9b8ab.chunk.js.LICENSE.txt": "/lolMatch/static/js/2.b0a9b8ab.chunk.js.LICENSE.txt",
+    "static/js/2.fa2faafc.chunk.js.LICENSE.txt": "/lolMatch/static/js/2.fa2faafc.chunk.js.LICENSE.txt",
     "static/media/Emblem_Bronze.ad96bf19.png": "/lolMatch/static/media/Emblem_Bronze.ad96bf19.png",
     "static/media/Emblem_Challenger.bcddbed6.png": "/lolMatch/static/media/Emblem_Challenger.bcddbed6.png",
     "static/media/Emblem_Diamond.8249cef1.png": "/lolMatch/static/media/Emblem_Diamond.8249cef1.png",
@@ -23,9 +23,9 @@
     "static/media/Emblem_Silver.ba092276.png": "/lolMatch/static/media/Emblem_Silver.ba092276.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.35236421.js",
-    "static/js/2.b0a9b8ab.chunk.js",
+    "static/js/runtime-main.7c2f1b6c.js",
+    "static/js/2.fa2faafc.chunk.js",
     "static/css/main.9b4cd726.chunk.css",
-    "static/js/main.d4ead9ff.chunk.js"
+    "static/js/main.cc45b2e3.chunk.js"
   ]
 }
