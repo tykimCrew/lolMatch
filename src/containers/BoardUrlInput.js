@@ -5,7 +5,7 @@ import { posiKorJson, posiEngJson, tierKorJson, tierEngJson, pattern_kor } from 
 import $ from 'jquery';
 
 function getCmtListAjax(boardUrl, dispatch) {
-  boardUrl = 'http://bj.afreecatv.com/yuambo/post/66497567';
+  //boardUrl = 'http://bj.afreecatv.com/yuambo/post/66497567';
   var urlArr = boardUrl.split('/');
 
   /**
