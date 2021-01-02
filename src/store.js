@@ -6,6 +6,7 @@ const AJAX_GETCMTLIST = 'ajax_getCmtList';
 const DROP_MEMBERCARD = 'drop_memberCard';
 const SEARCH_NICK = 'search_nick';
 const DROP_TO_CENTER = 'drop_toCenter';
+const CLICK_REFRESH = 'click_refresh';
 
 
 export default createStore((state, action) => {
@@ -58,6 +59,15 @@ export default createStore((state, action) => {
 
             newState = Object.assign(newState, state, { memberList: newMemberList2 });
 
+            break;
+        case CLICK_REFRESH:
+            var newMemberList3 = state.memberList;
+            action.memberList.forEach( (member) => {
+                if(state.memberList.filter( m => m.userId === member.userId).length === 0) {
+                    newMemberList3.push(member);
+                }
+            });
+            newState = Object.assign(newState, state, { memberList: newMemberList3 });
             break;
         default:
             break;

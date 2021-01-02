@@ -8,6 +8,8 @@ import midImg from '../images/position_default_img/Mid.png';
 import botImg from '../images/position_default_img/Bot.png';
 import supportImg from '../images/position_default_img/Support.png';
 
+import refreshImg from '../images/position_default_img/refresh.png';
+
 const STR_ALL = 'All';
 const STR_TOP = 'Top';
 const STR_JUNGLE = 'Jungle';
@@ -35,6 +37,15 @@ var PosiCnt = styled.div`
     text-align:center;
 `;
 
+var RefreshIcon = styled.img`
+    width: 40px;
+    height: 40px;
+    margin-left: 30px;
+    cursor: pointer;
+    background-color: gray;
+    border-radius: 5px;
+`;
+
 export default class MembersHeader extends Component {
     render() {
         var allCnt = this.props.memberList ? this.props.memberList.filter(e => (e.side === 'center')).length : 0;;
@@ -53,6 +64,8 @@ export default class MembersHeader extends Component {
                     <PosiIcon src={midImg} onClick={ () => this.props.onClick(STR_MID) } selected={this.props.selectedPosiView === STR_MID ? true : false}/>{this.props.memberList ? <PosiCnt index="3">{midCnt}</PosiCnt> : ''}
                     <PosiIcon src={botImg} onClick={ () => this.props.onClick(STR_BOT) } selected={this.props.selectedPosiView === STR_BOT ? true : false}/>{this.props.memberList ? <PosiCnt index="4">{botCnt}</PosiCnt> : ''}
                     <PosiIcon src={supportImg} onClick={ () => this.props.onClick(STR_SUPPORT) } selected={this.props.selectedPosiView === STR_SUPPORT ? true : false}/>{this.props.memberList ? <PosiCnt index="5">{supportCnt}</PosiCnt> : ''}
+
+                    <RefreshIcon src={refreshImg} onClick={ () => this.props.refresh() }/>
                 </div>
                 <div>
                     <span style={{color: 'white'}} onClick={this.props.getLogs}>닉네임: </span><input style={searchInput} type="text" value={this.props.typedText || ''} onChange={(e) => this.props.onChange(e.target.value)}></input>

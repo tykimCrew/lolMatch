@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import MembersHeader from '../containers/MembersHeader';
 import MemberIcon from './MemberIcon';
 
+import refreshImg from '../images/position_default_img/refresh.png';
+
 class Members extends Component {
     render() {
         const cmtElList = [];
@@ -28,7 +30,11 @@ class Members extends Component {
                                 <span style={{color : 'darkGray', fontSize: '1rem'}}>&nbsp;&nbsp;&nbsp;&nbsp;ex) https://bj.afreecatv.com/cleansun909/post/66109877</span>
                             </p>
                             <p>2. 기본 인기순(추천수 많은순), 최대 100명 입니다.</p>
-                            {/* <p>4. 마음대로 사용하셔도 되지만 우측 상단에 방명록은 남겨주시면 감사하겠습니다.</p> */}
+                            <br/>
+                            <h2>#변경사항#</h2>
+                            <h5>21.01.03</h5>
+                            <p>1. 중앙에 초상화이미지에 마우스 올릴시, 전체 덧글내용 toolTip 추가</p>
+                            <p>2. 새롭게달린 덧글만 추가로 불러오려면 '검색' 버튼말고 <img style={{width:'40px', height: '40px', background:'gray', borderRadius:'5px'}} src={refreshImg}></img>를 클릭해주세요.</p>
                         </div>
                 }
             </React.Fragment>
