@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/lolMatch/static/css/main.da7e5b64.chunk.css",
-    "main.js": "/lolMatch/static/js/main.065006a1.chunk.js",
-    "main.js.map": "/lolMatch/static/js/main.065006a1.chunk.js.map",
+    "main.css": "/lolMatch/static/css/main.70cfdd6a.chunk.css",
+    "main.js": "/lolMatch/static/js/main.de6e3704.chunk.js",
+    "main.js.map": "/lolMatch/static/js/main.de6e3704.chunk.js.map",
     "runtime-main.js": "/lolMatch/static/js/runtime-main.7c2f1b6c.js",
     "runtime-main.js.map": "/lolMatch/static/js/runtime-main.7c2f1b6c.js.map",
-    "static/js/2.572d6274.chunk.js": "/lolMatch/static/js/2.572d6274.chunk.js",
-    "static/js/2.572d6274.chunk.js.map": "/lolMatch/static/js/2.572d6274.chunk.js.map",
+    "static/js/2.7dd95723.chunk.js": "/lolMatch/static/js/2.7dd95723.chunk.js",
+    "static/js/2.7dd95723.chunk.js.map": "/lolMatch/static/js/2.7dd95723.chunk.js.map",
     "static/js/3.b010e3f1.chunk.js": "/lolMatch/static/js/3.b010e3f1.chunk.js",
     "static/js/3.b010e3f1.chunk.js.map": "/lolMatch/static/js/3.b010e3f1.chunk.js.map",
     "index.html": "/lolMatch/index.html",
-    "static/css/main.da7e5b64.chunk.css.map": "/lolMatch/static/css/main.da7e5b64.chunk.css.map",
-    "static/js/2.572d6274.chunk.js.LICENSE.txt": "/lolMatch/static/js/2.572d6274.chunk.js.LICENSE.txt",
+    "static/css/main.70cfdd6a.chunk.css.map": "/lolMatch/static/css/main.70cfdd6a.chunk.css.map",
+    "static/js/2.7dd95723.chunk.js.LICENSE.txt": "/lolMatch/static/js/2.7dd95723.chunk.js.LICENSE.txt",
     "static/media/Emblem_Bronze.ad96bf19.png": "/lolMatch/static/media/Emblem_Bronze.ad96bf19.png",
     "static/media/Emblem_Challenger.bcddbed6.png": "/lolMatch/static/media/Emblem_Challenger.bcddbed6.png",
     "static/media/Emblem_Diamond.8249cef1.png": "/lolMatch/static/media/Emblem_Diamond.8249cef1.png",
@@ -24,8 +24,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.7c2f1b6c.js",
-    "static/js/2.572d6274.chunk.js",
-    "static/css/main.da7e5b64.chunk.css",
-    "static/js/main.065006a1.chunk.js"
+    "static/js/2.7dd95723.chunk.js",
+    "static/css/main.70cfdd6a.chunk.css",
+    "static/js/main.de6e3704.chunk.js"
   ]
 }
