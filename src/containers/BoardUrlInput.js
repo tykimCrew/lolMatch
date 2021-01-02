@@ -9,8 +9,11 @@ const firebaseURL = 'https://lolmatch-49698-default-rtdb.firebaseio.com';
 
 function setLogUrl(boardUrl) {
   var jsondata1 = {};
-  jsondata1[moment().format('YYYY-MM-DD hh:mm:ss')] = boardUrl;
-  
+  jsondata1[moment().format('YYYY-MM-DD HH:mm:ss')] = boardUrl;
+
+
+  if (document.location.href.indexOf('localhost') > -1) return;
+
   fetch(`${firebaseURL}/logs.json`, {
     method: 'POST',
     body: JSON.stringify(jsondata1),
@@ -112,6 +115,13 @@ function getCmtListAjax(boardUrl, dispatch) {
         });
       });
     };
+
+    /**
+     * 덧글내용중 '<', '>', '&' 치환
+     */
+    if (item.comment) {
+      item.comment = item.comment.replaceAll("&gt;", ">").replaceAll("&lt;", "<").replaceAll("&amp;", "&");
+    }
 
     /**
      * 가공한 데이터를 최종결과변수에 넣기
