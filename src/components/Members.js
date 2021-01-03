@@ -34,7 +34,7 @@ class Members extends Component {
                             <h2>#변경사항#</h2>
                             <h5>21.01.03</h5>
                             <p>1. 중앙에 초상화이미지에 마우스 올릴시, 전체 덧글내용 toolTip 추가</p>
-                            <p>2. 새롭게달린 덧글만 추가로 불러오려면 '검색' 버튼말고 <img style={{width:'40px', height: '40px', background:'gray', borderRadius:'5px'}} src={refreshImg}></img>를 클릭해주세요.</p>
+                            <p>2. 새롭게달린 덧글만 추가로 불러오려면 '검색' 버튼말고 <img style={{width:'40px', height: '40px', background:'gray', borderRadius:'5px'}} src={refreshImg} alt=""></img>를 클릭해주세요.</p>
                         </div>
                 }
             </React.Fragment>

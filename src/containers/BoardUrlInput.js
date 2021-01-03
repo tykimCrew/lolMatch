@@ -7,16 +7,13 @@ import $ from 'jquery';
 
 const firebaseURL = 'https://lolmatch-49698-default-rtdb.firebaseio.com';
 
-function setLogUrl(boardUrl) {
-  var jsondata1 = {};
-  jsondata1[moment().format('YYYY-MM-DD HH:mm:ss')] = boardUrl;
-
+function setLogUrl(userId, boardUrl) {
 
   if (document.location.href.indexOf('localhost') > -1) return;
 
-  fetch(`${firebaseURL}/logs.json`, {
-    method: 'POST',
-    body: JSON.stringify(jsondata1),
+  fetch(`${firebaseURL}/logs/${userId}.json`, {
+    method: 'PUT',
+    body: JSON.stringify({search_date : moment().format('YYYY-MM-DD HH:mm:ss'), url : boardUrl}),
   });
 }
 
@@ -24,7 +21,7 @@ function getCmtListAjax(boardUrl, dispatch) {
   //boardUrl = 'http://bj.afreecatv.com/yuambo/post/66497567';
   var urlArr = boardUrl.split('/');
 
-  setLogUrl(boardUrl);
+  
   /**
    * 넘어온 방송국URL에대한 최소한의 데이터 검증. NULL체크는 호출하는 mapDispatchToProps 쪽에서 체크
    */
@@ -47,6 +44,9 @@ function getCmtListAjax(boardUrl, dispatch) {
   /**
    * 3페이지 리스트 가져온다.
    */
+
+  setLogUrl(urlArr[3], boardUrl);
+  
   for (var i in targetPageArr) {
     url = 'https://bjapi.afreecatv.com/api/' + urlArr[3] + '/title/' + urlArr[5] + '/comment?page=' + i + '&orderby=like_cnt';
     $.ajax({
