@@ -13,7 +13,7 @@ function setLogUrl(userId, boardUrl) {
 
   fetch(`${firebaseURL}/logs/${userId}.json`, {
     method: 'PUT',
-    body: JSON.stringify({search_date : moment().format('YYYY-MM-DD HH:mm:ss'), url : boardUrl}),
+    body: JSON.stringify({ search_date: moment().format('YYYY-MM-DD HH:mm:ss'), url: boardUrl }),
   });
 }
 
@@ -21,7 +21,7 @@ function getCmtListAjax(boardUrl, dispatch) {
   //boardUrl = 'http://bj.afreecatv.com/yuambo/post/66497567';
   var urlArr = boardUrl.split('/');
 
-  
+
   /**
    * 넘어온 방송국URL에대한 최소한의 데이터 검증. NULL체크는 호출하는 mapDispatchToProps 쪽에서 체크
    */
@@ -29,6 +29,7 @@ function getCmtListAjax(boardUrl, dispatch) {
 
   /**
    * apiUrl = "https://bjapi.afreecatv.com/api/khm11903/title/65714065/comment?page=1&orderby=like_cnt";
+   * board =  "http://bjapi.afreecatv.com/api/hesoyam123/title/66812247
    * 실제 api가 날라가는형식이 위와같으므로 나도 맞춰서 api를 쏴준다
    * urlArr[3] = user_id
    * urlArr[5] = 방송국게시판 순번
@@ -46,7 +47,7 @@ function getCmtListAjax(boardUrl, dispatch) {
    */
 
   setLogUrl(urlArr[3], boardUrl);
-  
+
   for (var i in targetPageArr) {
     url = 'https://bjapi.afreecatv.com/api/' + urlArr[3] + '/title/' + urlArr[5] + '/comment?page=' + i + '&orderby=like_cnt';
     $.ajax({
@@ -64,6 +65,34 @@ function getCmtListAjax(boardUrl, dispatch) {
       });
     });
   }
+
+  /**
+   * 방송국정보 불러오기
+   */
+  $.ajax({
+    url: 'https://bjapi.afreecatv.com/api/' + urlArr[3] + '/title/' + urlArr[5],
+    context: this, //context : this => .done()에서 this를 사용하기위해
+    async: false
+  }).done(json => {
+
+    /**
+     * 주최자는 덧글안달아도 자동참가
+     */
+    result.push({
+      userId: json.user_id,
+      userNick: json.user_nick,
+      profileImage: json.profile_image,
+      comment: json['title_name'],
+      likeCnt: 0,
+      myPosition: [],
+      myTier: '',
+      side: 'center', //side 초기값
+      position: '', //position 초기값
+      opener: true
+    });
+  });
+
+
 
   /**
        * 가져온 JSON데이터로 내가원하는데이터만 뽑기.

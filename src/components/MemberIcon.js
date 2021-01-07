@@ -13,6 +13,8 @@ import mimg from '../images/ranked-emblems/Emblem_Master.png';
 import gmimg from '../images/ranked-emblems/Emblem_Grandmaster.png';
 import cimg from '../images/ranked-emblems/Emblem_Challenger.png';
 
+import homeImg from '../images/home.png';
+
 const TierIcon = styled.img`
     width: 40px;
     height: 40px;
@@ -70,9 +72,9 @@ class MemberIcon extends Component {
                         onMouseOut={(e) => { this.toggleCommentTip(e, false) }}
                         id={'comment_tip_' + member.userId}
                     />
-                    <span>{member.userNick}</span>
+                    <span>{member.opener && <img style={{width:'1.1rem', height:'1.1rem', borderRadius:'3px'}}  src={homeImg} alt="home"></img>}{member.userNick}</span>
                     <TierIcon src={imgSrc}></TierIcon>
-                    <CommentTip readOnly className={'commentTip comment_tip_' + member.userId}>{member.comment}</CommentTip>
+                    <CommentTip readOnly className={'commentTip comment_tip_' + member.userId}>{member.opener && '*주최자 : '}{member.comment}</CommentTip>
                 </div>
             </React.Fragment>
         )

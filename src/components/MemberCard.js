@@ -12,8 +12,8 @@ import gmimg from '../images/ranked-emblems/Emblem_Grandmaster.png';
 import cimg from '../images/ranked-emblems/Emblem_Challenger.png';
 
 const TierIcon = styled.img`
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     display: ${props => props.src ? 'block' : 'none'};
 `;
 
@@ -56,7 +56,7 @@ class MemberCard extends Component {
                             <p className="userNick">{member.userNick}</p>
                             <span className="userId">{member.userId}</span>
                         </div>
-                        <TierIcon src={imgSrc} />
+                        {member.myTier  && <TierIcon src={imgSrc} />}
                     </div>
                     {
                         this.props.side === 'blue' ?

@@ -12,6 +12,7 @@ body, #root, .App{
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    position: relative;
 }
 /***************** TOP END******************/
 
